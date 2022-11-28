@@ -1,0 +1,16 @@
+helmDefaults:
+  wait: true
+  verify: false
+  atomic: true
+  historyMax: 10
+  missingFileHandler: Warn
+
+releases:
+  - name: elasticsearch
+    chart: charts/elasticsearch
+    namespace: observability
+    createNamespace: true
+  - name: jaeger
+    chart: charts/jaeger
+    namespace: observability
+    createNamespace: true
